@@ -63,6 +63,7 @@
   body{padding-bottom:110px;}
   @keyframes quake{0%{transform:translate(0)}25%{transform:translate(-6px,4px)}50%{transform:translate(5px,-5px)}75%{transform:translate(-4px,-3px)}100%{transform:translate(0)}}
   body.quake{animation:quake .5s 6;}
+  @media print{body *{display:none!important;}body:after{content:"lol. ink wasted. (page 67 of 67)";display:block;font-size:40px;}}
   .analysis{background:#fff;border-top:10px solid #000;padding:16px;font-family:Arial;cursor:default;}
   .analysis *{cursor:default !important;}
   .guestbook{background:#c0c0c0;border:2px outset #fff;padding:6px;font-family:Verdana;font-size:11px;}
@@ -82,7 +83,7 @@
 <div id="agegate" style="position:fixed;inset:0;background:#000;color:#fff;z-index:9998;display:flex;align-items:center;justify-content:center;font-family:Arial;"><div style="border:5px outset gold;background:#111;padding:20px;text-align:center;">🔞 AGE GATE (very serious) <a class="badge" href="#v12">12</a><br>Confirm you are <b>67 or 69</b> to enter:<br><br><button onclick="document.getElementById('agegate').remove()">I am 67</button> <button onclick="document.getElementById('agegate').remove()">I am 69</button> <button onclick="location.reload()">I am younger (restarts site)</button></div></div>
 <div class="top-stack">
 <div class="warn-top">⚠ COURSE DEMO: INTENTIONALLY THE WORST DESIGN — DO NOT COPY — every <span style="background:#fff;color:red;padding:0 6px;border-radius:50%;">N</span> hyperlinks to a violation at the bottom</div>
-<div class="top-strip" style="background:#ffff00;color:#ff0000;">🔔🔔 69 NOTIFICATIONS!!! essay due!! lab overdue!! midterm soon!! sale ends!! <button>Mark all read (does nothing)</button> <a class="badge" href="#v1">1</a> <a class="badge" href="#v5">5</a> <a class="badge" href="#v12">12</a></div>
+<div class="top-strip" style="background:#ffff00;color:#ff0000;">🔔🔔 69 NOTIFICATIONS!!! essay due!! lab overdue!! midterm soon!! sale ends!! <button>Mark all read (does nothing)</button> · auto-refresh in <span id="refcount">99</span>s <button onclick="postpone()">postpone (+30s, +1 countdown)</button> <span id="refmsg" style="font-size:11px;"></span> <a class="badge" href="#v1">1</a> <a class="badge" href="#v5">5</a> <a class="badge" href="#v12">12</a></div>
 <div class="top-strip" style="background:#000;color:#fff;">🍪 We use 69 cookies (67 for ads, 68 for tracking). <button onclick="alert('You accepted. No reject button exists.')">Accept all</button> <button onclick="alert('Settings page has 69 toggles, all reset on save')">Settings (broken)</button> <a class="badge" href="#v12">12</a></div>
 <div class="top-strip" style="background:#ff00ff;color:#fff;">📧 SUBSCRIBE!!! newsletter #69!!! <input placeholder="email..." style="width:110px;"> <button>Subscribe</button><button>SUBSCRIBE!!!</button><button style="font-size:9px;">subscribe</button> <a class="badge" href="#v2">2</a></div>
 </div>
@@ -91,7 +92,7 @@
 <div class="header-bad">
   <div style="font-size:10px;">🔥🔥🔥 WELCOME dear student!!!1!! <img alt="broken logo" src="logo_final_FINAL_v2.gif"> <img alt="broken" src="logo_new.gif"> same logo, 2 files, both broken <a class="badge" href="#v2">2</a></div>
   <h1>*** Student Planner PRO Ultimate 2003 *** <a class="badge" href="#v5">5</a></h1>
-  <h2>best planner in the world!!!1!! updated 2003/10/16 ... no wait 16.10.2026 ... I mean 10/16/26 ... visitor: 000069 <a class="badge" href="#v4">4</a></h2>
+  <h2>best planner in the world!!!1!! updated 2003/10/16 ... no wait 16.10.2026 ... I mean 10/16/26 ... visitor: 000069 · <span id="greet" style="font-size:11px;"></span> <a class="badge" href="#v4">4</a></h2>
   <div>
     <button class="btn69">Add Assignment</button>
     <button class="btn67">ADD assignment!!</button>
@@ -155,6 +156,7 @@
   </td>
   <td width="500">
     <div class="c2title">next deadlines (click!) (click??) (CLICK!!!)</div>
+    <div class="tiny" style="text-align:center;">📄 <span id="pgn">Page 1 of 67</span> <button onclick="deadPage()">Next →</button> <a class="badge" href="#v7">7</a></div>
     <div style="border:1px solid #000;border-left:10px solid red;margin:4px 0;padding:4px;background:#fff;">Essay draft — CS101 · today 23:59 · 明天到期?? · <span class="pill-a">Due today</span><br>
       <button onclick="alert('deleted forever. no undo lol')">Delete forever</button>
       <button onclick="if(!confirm('are you sure?'))alert('too late, deleting anyway')">Delete (maybe)</button> <a class="badge" href="#v8">8</a></div>
@@ -196,10 +198,12 @@
 <div id="railL" class="side-rail">⬆⬆<br><b>QUICK LINKS</b><br><a href="#v7">link 1</a><br><a href="#v7">link 1 (copy)</a><br><a href="#v7">LINK 1?!?</a><br><button>↑ Top</button><br><button>↑↑ TOP!!!</button><br>⭐⭐⭐<br>rate us 69/67<br><a class="badge" href="#v3">3</a> <a class="badge" href="#v7">7</a></div>
 <div id="railR" class="side-rail">💬<br><b>CHAT (68 online)</b><br><div class="tiny">anna: where is room?<br>bot: try all 3 maps<br>anna: ???<br>bot: CLAIM YOUR A+ ⬇</div><input placeholder="type..." style="width:70px;"><button>Send (fails)</button> <a class="badge" href="#v10">10</a></div>
 <div id="hongbao" style="position:fixed;left:8px;bottom:118px;z-index:600;width:200px;background:#c00;color:#ffe9b0;border:3px outset gold;font-family:Arial;font-size:12px;padding:6px;text-align:center;">🧧 新人红包<br><b>¥6.70</b> (of ¥69) <a class="badge" href="#v12">12</a><br><button onclick="openHongbao()">开 OPEN</button> <button onclick="document.getElementById('hongbao').remove()">×</button><div id="hongbao-msg" style="font-size:11px;"></div></div>
+<div id="support" style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:118px;z-index:601;width:270px;background:#fff;border:4px outset blue;font-family:Arial;font-size:12px;"><div style="background:blue;color:#fff;padding:4px;">💬 Support (online-ish) <button id="supx" style="float:right;">X</button> <a class="badge" href="#v10">10</a></div><div id="supmsgs" style="height:90px;overflow:auto;padding:4px;color:#000;">Bot: hi!! have you tried turning it off and on 67 times?</div><div style="padding:4px;"><input id="supin" placeholder="ask anything…" style="width:150px;"><button onclick="supAsk()">Send</button></div></div>
 <div id="toastspam"></div>
 <div id="roulette" style="position:fixed;right:8px;bottom:118px;z-index:600;width:230px;background:#ff0000;color:#ffff00;border:3px outset gold;font-family:Arial;font-size:11px;padding:6px;">🎰 DOOM ROULETTE: <b id="roulettestate">OFF</b><br><span class="tiny" style="font-size:10px;">clicks: <span id="rouletteclicks">0</span></span> <button onclick="event.stopPropagation();toggleRoulette()" style="font-size:10px;">ON/OFF (25% DOOM)</button> <a class="badge" href="#v12">12</a></div>
 <div class="bottom-stack">
 <div class="bottom-strip" style="background:#330033;color:#ffff00;">🔊 MUZAK: ON (auto, no off) <input id="vol" type="range" min="0" max="1" step="0.01" value="0.03" style="width:80px;" oninput="volChange(this.value)"> <span id="volmsg">volume: 0.03</span> <button onclick="freeRAM()">⬇ DOWNLOAD FREE RAM (5.5MB)</button> <a class="badge" href="#v12">12</a></div>
+<div class="bottom-strip" style="background:#fff;color:#000;">♿ Accessibility (certified wrong): <button onclick="document.body.style.fontSize='9px';alert('text enlarged* (*smaller)')">A+ bigger text</button> <button onclick="document.body.style.filter='contrast(.4) brightness(1.6)';alert('high contrast ON (everything is fog)')">contrast!!</button> <button onclick="document.body.style.fontFamily='Papyrus';alert('dyslexia-friendly* (*not)')">readable font</button> <button onclick="window.print()">Print (wastes ink)</button> <a class="badge" href="#v11">11</a></div>
 <div class="bottom-strip" style="background:#000;color:#0f0;"><marquee scrollamount="10">⬇ DOWNLOAD RAM ⬇ ESSAY WRITER 100% UNDETECTABLE ⬇ CRYPTO 1000x ⬇ VISITOR 69 ⬇ 67% CLAIMED ⬇ 68 LEFT ⬇</marquee> <a class="badge" href="#v12">12</a></div>
 <div class="bottom-strip" style="background:#fff;color:#000;">🔔 <span id="notioncount">69</span> unread notions!!! <button onclick="document.getElementById('toastspam').innerHTML+='<div class=spam-toast>🔔 NOTION: essay due!!! <a class=badge href=#v1>1</a></div>'">Show 1 more</button> <button onclick="for(let i=0;i<5;i++)addSpam()">+5 notions</button> <button>Mark read (adds 3 more)</button> <a class="badge" href="#v1">1</a></div>
 <div class="bottom-strip" style="background:navy;color:#fff;font-size:11px;">© 1997-2003-2026 (all years) · <a href="#top" style="color:#0f0;">Top</a> · <a href="#top" style="color:yellow;">TOP!!!</a> · <a href="#top" style="color:#fff;font-size:9px;">top</a> · status: <span style="background:yellow;color:red;">Unsaved?? Saved?? Autosaved 67%??</span> <a class="badge" href="#v1">1</a> <a class="badge" href="#v2">2</a> <a class="badge" href="#v4">4</a></div>
@@ -308,6 +312,16 @@ function freeRAM(){var junk='FREE RAM v67.69\n'+'1 spacious byte\n'.repeat(2000)
 (function(){var g=document.getElementById('epilepsy-gate');if(!g)return;try{if(sessionStorage.getItem('badGate')==='yes'){g.remove();return;}}catch(_){}document.getElementById('gate-enter').onclick=function(){try{sessionStorage.setItem('badGate','yes');}catch(_){}g.remove();};})();
 var konami=[38,38,40,40,37,39,37,39,66,65],ki=0;
 document.addEventListener('keydown',function(e){ki=(e.keyCode===konami[ki])?ki+1:(e.keyCode===konami[0]?1:0);if(ki===konami.length){ki=0;launchDoom('konami code. respect.');}});
+function deadPage(){document.getElementById('pgn').textContent='Page 1 of 67 (you are here forever)';addSpam();}
+var refT=99;function refTick(){refT--;var e=document.getElementById('refcount');if(e)e.textContent=Math.max(0,refT);if(refT<=0)location.reload();}
+setInterval(refTick,1000);
+var refN=1;function postpone(){refT+=30;refN++;setInterval(refTick,1000);document.getElementById('refmsg').textContent='ok. countdowns: '+refN+'. time melts '+refN+'x faster.';}
+(function(){var h=new Date().getHours(),g=document.getElementById('greet');if(g)g.textContent=(h<12?'Good evening 🌙 (67-hour clock)':'Good morning ☀️ (it is '+h+':00. trust us)');})();
+var supDodged=false;
+setTimeout(function(){document.getElementById('support').style.display='block';addSpam();},20000);
+document.getElementById('supx').onclick=function(){if(!supDodged){supDodged=true;this.textContent='X (missed)';this.style.transform='translateX(40px)';var x=this;setTimeout(function(){x.textContent='X';x.style.transform='none';},1500);}else{document.getElementById('support').style.display='none';}};
+var supReplies=['have you tried 67?','that sounds like a you problem (67% sure)','escalating… done. escalated to /dev/null','did you check chat msg #693?','our hours: never. response time: 67 days.','try turning it off and on 67 times'];
+function supAsk(){var inp=document.getElementById('supin'),box=document.getElementById('supmsgs');if(!inp.value)return;box.innerHTML+='<br>You: '+inp.value.replace(/</g,'&lt;');box.innerHTML+='<br>Bot: '+supReplies[Math.floor(Math.random()*supReplies.length)];inp.value='';box.scrollTop=box.scrollHeight;}
 var chopN=0;function chop(){chopN++;var done=(0.68+0.01*chopN).toFixed(2),left=(67-done).toFixed(2);document.getElementById('chops').textContent=68+chopN;document.getElementById('chopmsg').textContent='已砍 ¥'+done+'! 还差 ¥'+left+' ('+(6632-chopN)+' more chops. bring friends.)';}
 function openHongbao(){document.getElementById('hongbao-msg').textContent='…air. You got air. +67 hugs (emotional).';addSpam();}
 </script>
