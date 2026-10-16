@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Clicker (the cookie fights back) — Student Planner PRO</title>
+<style>
+  body{margin:0;background:#2b1a0e;color:#ffe9b0;font-family:"Comic Sans MS",Arial,sans-serif;text-align:center;}
+  h1{font-family:Impact;font-size:30px;color:gold;}
+  #arena{position:relative;height:320px;border:5px ridge gold;background:#4a2f16;margin:10px;overflow:hidden;cursor:crosshair;}
+  #cookie{position:absolute;font-size:64px;user-select:none;transition:left .18s,top .18s;}
+  #cookie.rest{filter:grayscale(1);}
+  .crumb{position:absolute;font-size:20px;pointer-events:none;}
+  .badge{display:inline-block;background:red;color:#fff;font-size:11px;font-weight:bold;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;text-decoration:none;border:1px solid #000;}
+  a{color:yellow;}
+</style>
+</head>
+<body>
+<div id="epilepsy-gate" style="position:fixed;inset:0;background:#111;z-index:10000;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;padding:16px;"><div style="max-width:540px;background:#fff;color:#111;border:6px solid #c00;padding:20px;text-align:left;"><h2 style="margin-top:0;color:#c00;">⚠️ Accessibility warning</h2><p style="font-size:14px;">This is an <b>intentional bad-design demo</b> (flashing, sound, motion, popups). If you have photosensitive epilepsy, migraines or motion disorders — do not enter.</p><div><button id="gate-enter" style="font-size:15px;padding:10px 18px;background:#c00;color:#fff;border:none;">I understand — enter</button> <a href="https://www.google.com" style="font-size:15px;">Leave</a></div></div></div>
+<script>(function(){var g=document.getElementById('epilepsy-gate');if(!g)return;try{if(sessionStorage.getItem('badGate')==='yes'){g.remove();return;}}catch(_){}document.getElementById('gate-enter').onclick=function(){try{sessionStorage.setItem('badGate','yes');}catch(_){}g.remove();};})();</script>
+
+<h1>🍪 COOKIE CLICKER <span style="font-size:14px;">(the cookie fights back)</span> <a class="badge" href="index.html#v8">8</a></h1>
+<div><a href="index.html">← back to planner</a></div>
+<div style="font-size:18px;">Cookies eaten: <b id="score">0</b> / 67 · Best: <b id="best">0</b></div>
+<div id="status" style="min-height:24px;font-size:14px;">catch it if you can</div>
+<div id="arena"><span id="cookie">🍪</span></div>
+<div><button onclick="buyGrandma()">Buy grandma (costs 67 cookies)</button> <span id="gmsg" style="font-size:13px;"></span></div>
+
+<script>
+var score=0,dodges=0,resting=false,won=false;
+var arena=document.getElementById('arena'),cookie=document.getElementById('cookie'),status=document.getElementById('status');
+var best=0;try{best=parseInt(localStorage.getItem('skCookieBest')||'0',10)||0;}catch(_){}
+document.getElementById('best').textContent=best;
+function place(){cookie.style.left=(Math.random()*(arena.clientWidth-80))+'px';cookie.style.top=(Math.random()*(arena.clientHeight-80))+'px';}
+place();
+arena.addEventListener('mousemove',function(e){if(resting||won)return;var r=arena.getBoundingClientRect(),cx=r.left+cookie.offsetLeft+32,cy=r.top+cookie.offsetTop+32;var d=Math.hypot(e.clientX-cx,e.clientY-cy);if(d<85){dodges++;if(dodges%10===0){resting=true;cookie.classList.add('rest');status.textContent='cookie is catching its breath… NOW! ('+dodges+' dodges)';setTimeout(function(){resting=false;cookie.classList.remove('rest');place();},1200);}else{place();status.textContent='missed! ('+dodges+' dodges)';}}});
+cookie.addEventListener('click',function(){if(won)return;score++;document.getElementById('score').textContent=score;for(var i=0;i<5;i++){var c=document.createElement('span');c.className='crumb';c.textContent='🍪';c.style.left=cookie.style.left;c.style.top=cookie.style.top;arena.appendChild(c);setTimeout(function(el){return function(){el.remove();};}(c),700);}if(score>best){best=score;try{localStorage.setItem('skCookieBest',String(best));}catch(_){}document.getElementById('best').textContent=best;}if(score>=67){won=true;status.textContent='🎉 67 COOKIES! You are legally a baker. Reward loading…';setTimeout(function(){window.location.href='doom.html';},2500);}else{place();}});
+function buyGrandma(){document.getElementById('gmsg').textContent='grandma is on break (since 2003).';}
+</script>
+</body>
+</html>

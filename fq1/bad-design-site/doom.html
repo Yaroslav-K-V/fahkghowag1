@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- INTENTIONALLY BAD THEME, REAL GAME: shareware DOOM via js-dos, DO NOT STUDY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOOM (study break #69 of 67) — Student Planner PRO</title>
+<link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+<script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+<style>
+  body{margin:0;background:#000;color:#0f0;font-family:"Comic Sans MS",Arial,sans-serif;}
+  .warn-top{background:#ff0000;color:#ffff00;text-align:center;font-weight:bold;padding:6px;font-size:14px;border-bottom:5px dashed #000;}
+  .doomhead{background:linear-gradient(90deg,#ff00ff,#00ffff,#ffff00);padding:8px;border-bottom:8px double red;text-align:center;}
+  .doomhead h1{margin:0;font-size:30px;color:#0000ff;text-shadow:3px 3px #ff0000;font-family:Impact;}
+  .blink{animation:bl 1.1s infinite;}
+  @keyframes bl{50%{opacity:0.2;}}
+  #dos{width:100%;height:78vh;}
+  .foot{background:#111;color:#0f0;font-size:12px;padding:8px;text-align:center;border-top:3px solid #0f0;}
+  .foot a{color:yellow;}
+  .badge{display:inline-block;background:red;color:#fff;font-size:11px;font-weight:bold;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;text-decoration:none;border:1px solid #000;vertical-align:super;}
+</style>
+</head>
+<body>
+<div class="warn-top">⚠ COURSE DEMO — shareware DOOM (freely distributable) to prove even procrastination is interactive here</div>
+<div class="doomhead">
+  <h1 class="blink">🔥 PLAY DOOM INSTEAD OF STUDYING 🔥</h1>
+  <div style="font-size:12px;">69 demons vs 67 bullets — pick a number, any number · <a href="index.html">← back to planner (47 deadlines waiting)</a></div>
+</div>
+<div id="dos"></div>
+<div class="foot">
+  Click the ▶ in the window to start · shareware DOOM © id Software, bundle via dos.zone, emulator = js-dos ·
+  didn't load? <a href="https://js-dos.com/DOOM/">play it on js-dos.com instead</a><br>
+  <b>Controls:</b> ↑/↓ = forward/back · ←/→ = turn · Alt+←/→ (or , .) = strafe · Shift = run · Ctrl = shoot · Space = open door/use · 1–7 = weapons · Tab = map · Esc = menu
+</div>
+<script>
+  Dos(document.getElementById("dos"), {
+    url: "https://v8.js-dos.com/bundles/doom.jsdos",
+    autoStart: true
+  });
+</script>
+</body>
+</html>

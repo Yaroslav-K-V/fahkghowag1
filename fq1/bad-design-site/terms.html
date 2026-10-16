@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions (all 67 pages) — Student Planner PRO</title>
+<style>
+  body{margin:0;background:#fffbe0;font-family:"Comic Sans MS",Arial,sans-serif;}
+  .page{max-width:640px;margin:0 auto;padding:12px 12px 120px;}
+  h1{font-family:Impact;font-size:28px;}
+  .trackbox{background:#000;color:#0f0;font-family:Courier;font-size:12px;padding:8px;border:3px solid #0f0;}
+  .honest{background:#fff;border:2px dashed green;font-size:12px;font-family:Arial;padding:6px;margin-top:6px;}
+  .sec{border-bottom:1px dotted #999;padding:8px 0;font-size:13px;}
+  .sec h3{margin:0 0 4px;font-size:14px;}
+  #readbar{position:sticky;top:0;background:yellow;border:2px solid #000;font-size:12px;padding:4px;font-family:Arial;}
+  #decision{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:4px solid #000;padding:10px;font-family:Arial;font-size:14px;text-align:center;}
+  #decline{transition:transform .15s;}
+  .badge{display:inline-block;background:red;color:#fff;font-size:11px;font-weight:bold;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;text-decoration:none;border:1px solid #000;}
+</style>
+</head>
+<body>
+<div id="epilepsy-gate" style="position:fixed;inset:0;background:#111;z-index:10000;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;padding:16px;"><div style="max-width:540px;background:#fff;color:#111;border:6px solid #c00;padding:20px;"><h2 style="margin-top:0;color:#c00;">⚠️ Accessibility warning</h2><p style="font-size:14px;">This is an <b>intentional bad-design demo</b> (flashing, sound, motion, popups). If you have photosensitive epilepsy, migraines or motion disorders — do not enter.</p><div><button id="gate-enter" style="font-size:15px;padding:10px 18px;background:#c00;color:#fff;border:none;">I understand — enter</button> <a href="https://www.google.com" style="font-size:15px;">Leave</a></div></div></div>
+<script>(function(){var g=document.getElementById('epilepsy-gate');if(!g)return;try{if(sessionStorage.getItem('badGate')==='yes'){g.remove();return;}}catch(_){}document.getElementById('gate-enter').onclick=function(){try{sessionStorage.setItem('badGate','yes');}catch(_){}g.remove();};})();</script>
+
+<div class="page">
+<div id="readbar">📜 Reading progress: <span id="pct">0%</span> (67% counts double) <a class="badge" href="index.html#v7">7</a></div>
+<h1>TERMS &amp; CONDITIONS <span style="font-size:12px;">(all 67 pages, lawyers cried)</span></h1>
+<div><a href="index.html">← back to planner</a></div>
+<div class="trackbox">📡 TRACKING DISCLOSURE: we track your scroll position, cursor velocity, hover intent, existential dread and 63 other metrics. <a class="badge" href="index.html#v12" style="color:#fff;">12</a></div>
+<div class="honest">Honest footnote (the only honest pixel on this page): all "tracking" above is computed locally in your tab and dies on refresh. Nothing is sent anywhere. The lawyers are actors.</div>
+<div id="terms"></div>
+</div>
+
+<div id="decision">To continue using Planner PRO, decide:
+<button id="acceptBtn" style="font-size:15px;background:green;color:#fff;" onclick="acceptAll()">Accept all 67 pages</button>
+<button id="decline">Decline</button> <span id="dodges" style="font-size:12px;">dodges: 0</span>
+</div>
+<div id="receipt" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9000;align-items:center;justify-content:center;font-family:Arial;"><div style="background:#fff;border:5px outset gold;padding:20px;max-width:420px;text-align:center;">✅ <b>Accepted all 67 pages in record time.</b><br><span style="font-size:13px;">You are the 67th fastest reader (of 67). A diploma is in the mail (it isn't).</span><br><br><a href="index.html">Back to planner</a></div></div>
+
+<script>
+var LOREM='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.';
+var box=document.getElementById('terms'),html='';
+for(var n=1;n<=67;n++){
+  var p=LOREM;
+  if(n===1)p='Welcome. By reading this sentence you already agreed to Section 67.';
+  if(n===34)p='Halfway there. Section 34 of 67. The Decline button has been doing cardio for this moment.';
+  if(n===67)p='You made it. Nobody has ever made it. The Accept button was inside you all along. (Legally binding.)';
+  html+='<div class="sec"><h3>Section '+n+' of 67</h3>'+p+'</div>';
+}
+box.innerHTML=html;
+window.addEventListener('scroll',function(){var h=document.documentElement,p=Math.min(100,Math.round(100*h.scrollTop/(h.scrollHeight-h.clientHeight||1)));document.getElementById('pct').textContent=p+'%';});
+var dodges=0,tired=false;
+var dec=document.getElementById('decline');
+function dodge(){if(tired)return;dodges++;document.getElementById('dodges').textContent='dodges: '+dodges;var x=(Math.random()*240-120).toFixed(0),y=(Math.random()*80-60).toFixed(0);dec.style.transform='translate('+x+'px,'+y+'px)';if(dodges>=6){tired=true;dec.textContent='Decline (out of breath)… fine, click me';dec.style.transform='none';}}
+dec.addEventListener('pointerenter',dodge);
+dec.addEventListener('click',function(){if(!tired){dodge();return;}document.getElementById('receipt').style.display='flex';document.querySelector('#receipt b').textContent='Too slow. You already accepted by reading this. ✅';});
+function acceptAll(){document.getElementById('receipt').style.display='flex';}
+</script>
+</body>
+</html>

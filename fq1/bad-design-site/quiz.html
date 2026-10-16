@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which deadline are you? (you are overdue) — Student Planner PRO</title>
+<style>
+  body{margin:0;background:#1a0033;color:#ffe9ff;font-family:"Comic Sans MS",Arial,sans-serif;}
+  .box{max-width:520px;margin:20px auto;border:5px ridge magenta;padding:16px;text-align:center;}
+  h1{font-family:Impact;color:yellow;}
+  button{font-size:15px;margin:4px;}
+  .badge{display:inline-block;background:red;color:#fff;font-size:11px;font-weight:bold;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;text-decoration:none;border:1px solid #000;}
+  a{color:yellow;}
+</style>
+</head>
+<body>
+<div id="epilepsy-gate" style="position:fixed;inset:0;background:#111;z-index:10000;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;padding:16px;"><div style="max-width:540px;background:#fff;color:#111;border:6px solid #c00;padding:20px;"><h2 style="margin-top:0;color:#c00;">⚠️ Accessibility warning</h2><p style="font-size:14px;">This is an <b>intentional bad-design demo</b> (flashing, sound, motion, popups). If you have photosensitive epilepsy, migraines or motion disorders — do not enter.</p><div><button id="gate-enter" style="font-size:15px;padding:10px 18px;background:#c00;color:#fff;border:none;">I understand — enter</button> <a href="https://www.google.com" style="font-size:15px;">Leave</a></div></div></div>
+<script>(function(){var g=document.getElementById('epilepsy-gate');if(!g)return;try{if(sessionStorage.getItem('badGate')==='yes'){g.remove();return;}}catch(_){}document.getElementById('gate-enter').onclick=function(){try{sessionStorage.setItem('badGate','yes');}catch(_){}g.remove();};})();</script>
+
+<div class="box">
+<h1>🔮 WHICH DEADLINE ARE YOU? <a class="badge" href="index.html#v6">6</a></h1>
+<div><a href="index.html">← back to planner</a></div>
+<div id="prog" style="font-size:12px;">Question 1 of 3 (67 total, trust us)</div>
+<div id="q" style="font-size:18px;margin:12px 0;"></div>
+<div id="opts"></div>
+<div id="result" style="display:none;">
+<div style="font-size:40px;">📅</div>
+<div style="font-size:26px;font-weight:bold;color:red;background:yellow;display:inline-block;padding:4px 12px;">YOU ARE: OVERDUE</div>
+<div id="flavor" style="font-size:14px;margin:10px 0;"></div>
+<button onclick="retake()">Retake (same result)</button>
+<button onclick="share()">Share my shame</button>
+</div>
+</div>
+
+<script>
+var qs=[
+  {q:'It is 8:59. Lecture is at 9:00. You are…',o:['in bed','in the shower','already late yesterday']},
+  {q:'How many tabs are open right now?',o:['67','69','yes']},
+  {q:'Planner status says…',o:['Upcoming','Due today','Completed (lies)']}
+];
+var qi=0;
+var flavors=['The quiz read your aura (67% accurate).','Your answers were carefully ignored.','Statistical analysis (one glance) confirms it.','Even the quiz deadline passed while you answered.'];
+function render(){document.getElementById('prog').textContent='Question '+(qi+1)+' of 3 (67 total, trust us)';document.getElementById('q').textContent=qs[qi].q;var o='';for(var i=0;i<qs[qi].o.length;i++){o+='<button onclick="answer()">'+qs[qi].o[i]+'</button><br>';}document.getElementById('opts').innerHTML=o;}
+function answer(){qi++;if(qi>=qs.length){document.getElementById('q').style.display='none';document.getElementById('opts').style.display='none';document.getElementById('prog').textContent='Result (peer-reviewed by 67 sigmas)';document.getElementById('flavor').textContent=flavors[Math.floor(Math.random()*flavors.length)];document.getElementById('result').style.display='block';}else{render();}}
+function retake(){qi=0;document.getElementById('q').style.display='block';document.getElementById('opts').style.display='block';document.getElementById('result').style.display='none';render();}
+function share(){var s="I took the deadline quiz. I am overdue. (67%)";try{if(navigator.clipboard){navigator.clipboard.writeText(s);alert('Shame copied. Paste it anywhere.');}else{alert(s);} }catch(_){alert(s);}}
+render();
+</script>
+</body>
+</html>

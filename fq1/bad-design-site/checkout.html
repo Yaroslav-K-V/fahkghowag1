@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — 67 hugs ONLY — Student Planner PRO</title>
+<style>
+  body{margin:0;background:linear-gradient(90deg,#ff00ff,#00ffff);font-family:"Comic Sans MS",Arial,sans-serif;}
+  .card{max-width:480px;margin:20px auto;background:#fff;border:8px double #000;padding:16px;text-align:center;}
+  h1{font-family:Impact;}
+  #meter{height:24px;border:2px solid #000;background:#eee;margin:8px 0;}
+  #fill{height:100%;width:0%;background:linear-gradient(90deg,red,orange);}
+  .badge{display:inline-block;background:red;color:#fff;font-size:11px;font-weight:bold;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;text-decoration:none;border:1px solid #000;}
+  #paid{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9000;align-items:center;justify-content:center;}
+</style>
+</head>
+<body>
+<div id="epilepsy-gate" style="position:fixed;inset:0;background:#111;z-index:10000;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;padding:16px;"><div style="max-width:540px;background:#fff;color:#111;border:6px solid #c00;padding:20px;"><h2 style="margin-top:0;color:#c00;">⚠️ Accessibility warning</h2><p style="font-size:14px;">This is an <b>intentional bad-design demo</b> (flashing, sound, motion, popups). If you have photosensitive epilepsy, migraines or motion disorders — do not enter.</p><div><button id="gate-enter" style="font-size:15px;padding:10px 18px;background:#c00;color:#fff;border:none;">I understand — enter</button> <a href="https://www.google.com" style="font-size:15px;">Leave</a></div></div></div>
+<script>(function(){var g=document.getElementById('epilepsy-gate');if(!g)return;try{if(sessionStorage.getItem('badGate')==='yes'){g.remove();return;}}catch(_){}document.getElementById('gate-enter').onclick=function(){try{sessionStorage.setItem('badGate','yes');}catch(_){}g.remove();};})();</script>
+
+<div class="card">
+<h1>🛒 CHECKOUT <a class="badge" href="index.html#v12">12</a></h1>
+<div><a href="index.html">← back to planner</a></div>
+<div style="font-size:15px;">📦 <b>A+ (used, slight plagiarism, 67% off)</b></div>
+<div style="font-size:22px;font-weight:bold;">Price: 67 hugs</div>
+<div style="font-size:12px;">(we also accept 69 compliments. we don't take those.)</div>
+<div id="meter"><div id="fill"></div></div>
+<div>Hugs paid: <b id="hugs">0</b> / 67</div>
+<div id="hugmsg" style="min-height:22px;font-size:13px;">the hug button is below. it judges you.</div>
+<button id="hugBtn" style="font-size:22px;" onclick="hug()">🤗 HUG</button><br><br>
+<button onclick="payCard()">Pay by card (real money)</button>
+<div style="font-size:11px;margin-top:8px;border-top:1px dashed #999;padding-top:6px;">Tracking note: we track hugs locally in this tab. That's it. That's the tracking. No card fields exist on this page on purpose — your bank details are safe from us.</div>
+</div>
+
+<div id="paid"><div style="background:#fff;border:5px outset gold;padding:20px;max-width:420px;text-align:center;font-family:Arial;"><marquee scrollamount="10">✅ PAID IN FULL ✅ PAID IN FULL ✅</marquee><b>Receipt #000067</b><br><span style="font-size:13px;">67 hugs received. Emotional damage included free of charge.</span><br><br><button onclick="receipt()">Download receipt</button> <a href="index.html">Back to planner</a></div></div>
+
+<script>
+var hugs=0,paid=false;
+var msgs=['warm.','warmer.','the button is blushing.','hug #10! it tells its friends.','halfway. the hugs file a union.','so many hugs. security is watching.','67th hug incoming. make it count.'];
+function hug(){if(paid)return;hugs++;document.getElementById('hugs').textContent=hugs;document.getElementById('fill').style.width=Math.min(100,Math.round(100*hugs/67))+'%';document.getElementById('hugmsg').textContent=msgs[Math.min(msgs.length-1,Math.floor(hugs/10))];if(hugs>=67){paid=true;document.getElementById('paid').style.display='flex';}}
+function payCard(){alert('DECLINED. The bank laughed. 67 times. (No card fields exist here — nothing was sent anywhere.)');}
+function receipt(){var b=new Blob(['RECEIPT #000067\nItem: A+ (used)\nPaid: 67 hugs\nChange: 0 hugs\nThank you. No refunds. Ever.\n'],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='receipt_67.txt';a.click();}
+</script>
+</body>
+</html>
